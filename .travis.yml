@@ -22,6 +22,7 @@ install:
         pkg-config
 
 before_script:
+  - cd ..
   - git clone https://github.com/staticlibs/external_asio.git
 
 script:
