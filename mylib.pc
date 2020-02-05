@@ -4,4 +4,4 @@ Description: My Lib
 Requires:
 Libs:
 Libs.private:
-Cflags: -I/usr/include/ -DMY_LIB
+Cflags: -I/usr/include -DMY_LIB
