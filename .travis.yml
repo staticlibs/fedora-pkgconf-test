@@ -1,0 +1,22 @@
+language: cpp
+
+sudo: required
+
+services:
+  - docker
+
+os:
+  - linux
+
+before_install:
+  - export CC=
+  - export CXX=
+  - export D="docker exec fedora"
+  - docker pull fedora
+  - docker run -id --name fedora -v `pwd`:/host -w=/root -e "PKG_CONFIG_PATH=/host" fedora bash
+
+script:
+  - $D dnf install -y pkg-config
+  - $D cat /etc/fedora-release
+  - $D sh -c "echo $PKG_CONFIG_PATH"
+  - $D pkg-config --modversion mylib
