@@ -27,7 +27,7 @@ before_script:
 script:
   - set -e
   - $D cat /etc/fedora-release
-  - $D bash 'echo $PKG_CONFIG_PATH'
+  - $D sh -c 'echo $PKG_CONFIG_PATH'
   - $D ls -lh /src/external_asio/resources/pkgconfig_system
   - $D cat /src/external_asio/resources/pkgconfig_system/asio.pc
   - $D pkg-config --modversion asio
