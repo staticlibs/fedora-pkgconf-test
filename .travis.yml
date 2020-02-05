@@ -19,30 +19,15 @@ before_install:
 
 install:
   - $D dnf install -y
-        gcc-c++
         pkg-config
-        cmake
-        make
-        valgrind
-        asio-devel
-        openssl-devel
-        log4cplus-devel
-        zlib-devel
 
 before_script:
-  - git clone https://github.com/staticlibs/cmake.git
   - git clone https://github.com/staticlibs/external_asio.git
-  - git clone https://github.com/staticlibs/staticlib_config.git
-  - git clone https://github.com/staticlibs/staticlib_support.git
-  - git clone https://github.com/staticlibs/staticlib_io.git
-  - git clone https://github.com/staticlibs/staticlib_endian.git
-  - git clone https://github.com/staticlibs/staticlib_crypto.git
-  - git clone https://github.com/staticlibs/staticlib_websocket.git
-  - git clone https://github.com/staticlibs/staticlib_utils.git
 
 script:
   - set -e
   - $D cat /etc/fedora-release
+  - $D bash 'echo $PKG_CONFIG_PATH'
+  - $D ls -lh /src/external_asio/resources/pkgconfig_system
+  - $D cat /src/external_asio/resources/pkgconfig_system/asio.pc
   - $D pkg-config --modversion asio
-  - $D cmake /src/staticlib_pion -DCMAKE_CXX_FLAGS="--std=c++17"
-  - $D make
