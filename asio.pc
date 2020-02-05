@@ -1,0 +1,7 @@
+Name: asio
+Version: 1.10.8-0
+Description:C++ library for network programming
+Requires:
+Libs:
+Libs.private:
+Cflags: -I/usr/include/ -DASIO_STANDALONE -DASIO_HAS_STD_CHRONO -DASIO_HAS_STD_SYSTEM_ERROR
