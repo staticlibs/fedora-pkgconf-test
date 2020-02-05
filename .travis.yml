@@ -14,8 +14,8 @@ before_install:
   - export D="docker exec fedora"
   - git clone https://github.com/staticlibs/staticlib_pion.git
   - cd staticlib_pion
-  - docker pull fedora
-  - docker run -id --name fedora -v `pwd`/..:/src -w=/root -e "PKG_CONFIG_PATH=/src/external_asio/resources/pkgconfig_system" fedora bash
+  - docker pull fedora:30
+  - docker run -id --name fedora -v `pwd`/..:/src -w=/root -e "PKG_CONFIG_PATH=/src/external_asio/resources/pkgconfig_system" fedora:30 bash
 
 install:
   - $D dnf install -y
