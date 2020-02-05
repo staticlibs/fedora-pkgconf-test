@@ -19,4 +19,4 @@ script:
   - $D dnf install -y pkg-config
   - $D cat /etc/fedora-release
   - $D sh -c "echo $PKG_CONFIG_PATH"
-  - $D pkg-config --modversion mylib
+  - $D pkg-config --modversion asio
