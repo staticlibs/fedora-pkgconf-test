@@ -48,5 +48,5 @@ script:
   - $D ls -lh /src/external_asio/resources/pkgconfig_system
   - $D cat /src/external_asio/resources/pkgconfig_system/asio.pc
   - $D pkg-config --modversion asio
-  - $D cmake /src/staticlib_pion -DCMAKE_CXX_FLAGS="--std=c++17"
+  - $D cmake /src/staticlib_pion -DCMAKE_CXX_FLAGS="--std=c++17" --trace-expand
   - $D make
